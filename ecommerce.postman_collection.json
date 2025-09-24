@@ -1,0 +1,2120 @@
+{
+	"info": {
+		"_postman_id": "fee9881e-1038-4ff7-a549-fd1697381416",
+		"name": "ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48343792",
+		"_collection_link": "https://aossama2015-3823562.postman.co/workspace/Ahmed-Ossama's-Workspace~ed62730c-df03-4f97-8142-322f8702de89/collection/48343792-fee9881e-1038-4ff7-a549-fd1697381416?action=share&source=collection_link&creator=48343792"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Create new category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Make-Up2\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/categories",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/categories",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All categories with pagination",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/categories?page=1&limit=10",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "page number"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "count of docs per page"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:5000/api/v1/categories?page=2&limit=5",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/v1/categories?page=1&limit=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "page number"
+										},
+										{
+											"key": "limit",
+											"value": "3",
+											"description": "count of docs per page"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "553"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"229-scOChlgrE+laRd99015liz2TRR0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Sep 2025 04:19:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"page\": 1,\n    \"totalPages\": 3,\n    \"totalResults\": 8,\n    \"limit\": 3,\n    \"result\": 3,\n    \"data\": [\n        {\n            \"_id\": \"68ce29997c540a4fa77d9c79\",\n            \"name\": \"bla bla\",\n            \"slug\": \"bla-bla\",\n            \"createdAt\": \"2025-09-20T04:12:09.487Z\",\n            \"updatedAt\": \"2025-09-20T04:12:09.487Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68ce2658b719f51216da9373\",\n            \"name\": \"Beach Stuff\",\n            \"slug\": \"beach-stuff\",\n            \"createdAt\": \"2025-09-20T03:58:16.433Z\",\n            \"updatedAt\": \"2025-09-20T03:58:16.433Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"68ce2648b719f51216da9371\",\n            \"name\": \"Soft Drinks\",\n            \"slug\": \"soft-drinks\",\n            \"createdAt\": \"2025-09-20T03:58:00.546Z\",\n            \"updatedAt\": \"2025-09-20T03:58:00.546Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get category by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/categories/68ce2417843ccec91975c372",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"68ce2417843ccec91975c372"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit category by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"women clothes\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/categories/68ce2417843ccec91975c372",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"68ce2417843ccec91975c372"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/categories/68ce29997c540a4fa77d9c79",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"68ce29997c540a4fa77d9c79"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubCategories",
+			"item": [
+				{
+					"name": "Create new SubCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"bla bla3\",\r\n    \"category\": \"68ce1fbe919230854f0c0e4c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/subcategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"subcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All SubCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/subcategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"subcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get SubCategory by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/subcategories/68d1647620b418a62c6b660b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"subcategories",
+								"68d1647620b418a62c6b660b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All subCategories with pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/subcategories?page=1&limit=3",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"subcategories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Sub Category by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Mac Os\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/subcategories/68d1648620b418a62c6b660d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"subcategories",
+								"68d1648620b418a62c6b660d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete SubCategory by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/subcategories/68d2b4718bdf38ffabc37a26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"subcategories",
+								"68d2b4718bdf38ffabc37a26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category/subCategories",
+			"item": [
+				{
+					"name": "list subCategories for a category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/categories/68ce1fbe919230854f0c0e4c/subcategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"68ce1fbe919230854f0c0e4c",
+								"subcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creat SubCat on a Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/categories/68d16943f73ad24d52445d87/subcategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"68d16943f73ad24d52445d87",
+								"subcategories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brands",
+			"item": [
+				{
+					"name": "Create New Brand",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"zara\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/brands",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Brands",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/brands",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Brand by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/brands/68d27f1a091a312d575b054a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"brands",
+								"68d27f1a091a312d575b054a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Brands with pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/brands?page=1&limit=2",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"brands"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Brand by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"British House\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/brands/68d27f1a091a312d575b054a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"brands",
+								"68d27f1a091a312d575b054a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Brand by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/brands/68d27f1a091a312d575b054a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"brands",
+								"68d27f1a091a312d575b054a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create new Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjNjRiYjE1MThmY2U1ZjExYjE3YyIsImlhdCI6MTc1ODcwOTc4MywiZXhwIjoxNzU5MzE0NTgzfQ.BYhfqZGgpghE829VjOrngjqxn8lGCmBntgi_1cph3Ic",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Women shoes\",\r\n  \"brand\": \"68d2b50b8bdf38ffabc37a36\", \r\n  \"description\": \"high quality High-heels shoes.\",\r\n  \"price\": 500,\r\n  \"discount\": 0.2,\r\n\r\n  \"stock\": [\r\n    {\r\n      \"color\": \"Black\",\r\n      \"images\": [\r\n        \"https://example.com/images/tshirt-black-front.jpg\",\r\n        \"https://example.com/images/tshirt-black-back.jpg\"\r\n      ],\r\n      \"sizes\": [\r\n        { \"name\": \"One Size\", \"qty\":10 }\r\n\r\n      ]\r\n    },\r\n    {\r\n      \"color\": \"White\",\r\n      \"images\": [\r\n        \"https://example.com/images/tshirt-white-front.jpg\",\r\n        \"https://example.com/images/tshirt-white-back.jpg\"\r\n      ],\r\n      \"sizes\": [\r\n        { \"name\": \"M\", \"qty\": 12 },\r\n        { \"name\": \"L\", \"qty\": 20 },\r\n        { \"name\": \"XL\", \"qty\": 5 }\r\n      ]\r\n    }\r\n  ],\r\n  \"material\": \"100% Cotton\",\r\n  \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\r\n  \"offers\": [\"Buy 2 Get 1 Free\", \"Free Shipping\"],\r\n  \"sold\": 35,\r\n  \"ratingQty\": 12,\r\n  \"rating\": 4.8,\r\n  \"category\": \"68ce2417843ccec91975c372\", \r\n  \"subCategory\": \"68d23917915c83aa4e1022ab\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/products",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/products/68d27f1a091a312d575b054a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"68d27f1a091a312d575b054a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All products with pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ecommerce}}/api/v1/products?page=1&limit=10",
+							"host": [
+								"{{ecommerce}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjNjRiYjE1MThmY2U1ZjExYjE3YyIsImlhdCI6MTc1ODcwOTc4MywiZXhwIjoxNzU5MzE0NTgzfQ.BYhfqZGgpghE829VjOrngjqxn8lGCmBntgi_1cph3Ic",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"Women's shoes\"}\r\n\r\n\r\n//user must be loged in\r\n//role =seller\r\n// product must be owned by this seller\r\n//must send the seller token in headers (Bearer :token)",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/products/68d3ca38c133cd88325742aa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"68d3ca38c133cd88325742aa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/products/68d27f1a091a312d575b054a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"68d27f1a091a312d575b054a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "register New User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Amdmin Acc\",\r\n  \"email\": \"AdminAcc@gmail.com\",\r\n  \"password\": \"01554580561\",\r\n  \"role\": \"admin\"\r\n//   \"phone\": \"0121231241297\",\r\n//   \"businessName\": \"Ossama Seller\",\r\n//   \"businessDescription\": \"We sell clothes.\",\r\n//   \"businessAddress\": {\r\n//     \"street\": \"123 St\",\r\n//     \"state\": \"Alex\",\r\n//      \"zipCode\": \"13311\"\r\n//   }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Ahmed User\",\r\n  \"email\": \"user@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"role\":\"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-HvnZVIP2pTIIblxLAuaJaoqTs2c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 03:34:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User registered successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODY4NDg3MCwiZXhwIjoxNzU5Mjg5NjcwfQ.CPgFT-BrZPs4FXBORO7rtUjbdKcOD7VMaWkNYJuuzGg\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"68d366c59233525529303021\",\n            \"name\": \"Ahmed User\",\n            \"email\": \"user@gmail.com\",\n            \"role\": \"user\"\n        }\n    }\n}"
+						},
+						{
+							"name": "register admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Ahmed admin\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"role\":\"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "355"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"163-ErsCMZwC4oFdNXAzjokC7fWF+7U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 03:39:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User registered successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2N2ZjYjBhMjE1NmNmZTEzMzRiZSIsImlhdCI6MTc1ODY4NTE4MSwiZXhwIjoxNzU5Mjg5OTgxfQ.6NXiBeYAGH1Hqz8B5neznpG5Lum4Cpb8tryipiqD0ZE\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"68d367fcb0a2156cfe1334be\",\n            \"name\": \"Ahmed admin\",\n            \"email\": \"admin@gmail.com\",\n            \"role\": \"admin\"\n        }\n    }\n}"
+						},
+						{
+							"name": "register Seller",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Ahmed Yousry seller2\",\r\n  \"email\": \"ahmedYousry.seller2@gmail.com\",\r\n  \"password\": \"123456789\",\r\n  \"role\": \"seller\",\r\n  \"phone\": \"01234567891\",\r\n  \"businessName\": \"Ahmed Youssry\",\r\n  \"businessDescription\": \"We sell clothes.\",\r\n  \"businessAddress\": {\r\n    \"street\": \"123 St\",\r\n    \"state\": \"Cairo\",\r\n    \"zipCode\": \"11511\"\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17b-GuT5NYL9FFdc8rVqzTd3ENWHZiM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 04:19:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User registered successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM3MTM4YjM4NzA5NWM4Yjg5OGRhYSIsImlhdCI6MTc1ODY4NzU0NSwiZXhwIjoxNzU5MjkyMzQ1fQ.nO_Vs9J96vYXlWpuled0txmDUwGHJSXea0Fx_47ta88\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"68d37138b387095c8b898daa\",\n            \"name\": \"Ahmed Yousry seller2\",\n            \"email\": \"ahmedyousry.seller2@gmail.com\",\n            \"role\": \"seller\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODY4NDg3MCwiZXhwIjoxNzU5Mjg5NjcwfQ.CPgFT-BrZPs4FXBORO7rtUjbdKcOD7VMaWkNYJuuzGg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forogot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"aossama2017@gmail.com\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset passsword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\":\"new password\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/reset-password/9295be02715ab94a9e999d8d07a72bd9c79de661a383b0846bc5e8e1256e1081",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password",
+								"9295be02715ab94a9e999d8d07a72bd9c79de661a383b0846bc5e8e1256e1081"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add products to cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"68d3728bb387095c8b898dca\",\r\n  \"quantity\": 4,\r\n  \"color\": \"Black\",\r\n  \"size\": \"S\"\r\n}\r\n//these are just the required fields for testing with populate and lean virtuals\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add products to cart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"productId\": \"68d3ca38c133cd88325742aa\",\r\n  \"quantity\": 1,\r\n  \"color\": \"White\",\r\n  \"size\": \"M\"\r\n}\r\n//these are just the required fields for testing with populate and lean virtuals\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/cart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"517-CYpSt+ZKPrji9BTjvr0r/2SUpm0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 13:36:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Item added to cart\",\n    \"data\": {\n        \"cart\": {\n            \"_id\": \"68d3f08bc025dd51d9989e6b\",\n            \"user\": \"68d366c59233525529303021\",\n            \"items\": [\n                {\n                    \"productId\": {\n                        \"_id\": \"68d2c6f2f7ebd7b4a463e1e7\",\n                        \"title\": \"Men's Cotton T-Shirt\",\n                        \"price\": 299,\n                        \"discount\": 0.2,\n                        \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\n                        \"finalPrice\": 239.2,\n                        \"id\": \"68d2c6f2f7ebd7b4a463e1e7\"\n                    },\n                    \"quantity\": 4,\n                    \"color\": \"Black\",\n                    \"size\": \"L\",\n                    \"price\": 239.2,\n                    \"_id\": \"68d3f08bc025dd51d9989e6d\",\n                    \"id\": \"68d3f08bc025dd51d9989e6d\"\n                },\n                {\n                    \"productId\": {\n                        \"_id\": \"68d2c9c5cfd97205183ec5c2\",\n                        \"title\": \"Men's Cotton T-Shirt\",\n                        \"price\": 299,\n                        \"discount\": 0.2,\n                        \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\n                        \"finalPrice\": 239.2,\n                        \"id\": \"68d2c9c5cfd97205183ec5c2\"\n                    },\n                    \"quantity\": 1,\n                    \"color\": \"Black\",\n                    \"size\": \"S\",\n                    \"price\": 239.2,\n                    \"_id\": \"68d3f350ed9430c99448e829\",\n                    \"id\": \"68d3f350ed9430c99448e829\"\n                },\n                {\n                    \"productId\": {\n                        \"_id\": \"68d3ca38c133cd88325742aa\",\n                        \"title\": \"Women's shoes\",\n                        \"price\": 500,\n                        \"discount\": 0.2,\n                        \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\n                        \"finalPrice\": 400,\n                        \"id\": \"68d3ca38c133cd88325742aa\"\n                    },\n                    \"quantity\": 1,\n                    \"color\": \"White\",\n                    \"size\": \"M\",\n                    \"price\": 400,\n                    \"_id\": \"68d3f3d7ed9430c99448e837\",\n                    \"id\": \"68d3f3d7ed9430c99448e837\"\n                }\n            ],\n            \"totalPrice\": 1596,\n            \"totalItems\": 6,\n            \"createdAt\": \"2025-09-24T13:22:19.780Z\",\n            \"updatedAt\": \"2025-09-24T13:36:23.408Z\",\n            \"__v\": 3,\n            \"id\": \"68d3f08bc025dd51d9989e6b\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get my Cart details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit cart items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"quantity\": 9}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/cart/items/68d3f53aed9430c99448e878",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"items",
+								"68d3f53aed9430c99448e878"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clear the Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete specific item from cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/cart/items/68d3f53aed9430c99448e878",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"cart",
+								"items",
+								"68d3f53aed9430c99448e878"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "creat order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shippingAddress\": {\r\n    \"street\": \"123 \",\r\n    \"city\": \"Alexandria\",\r\n    \"state\": \"Alex\",\r\n    \"zipCode\": \"12345\",\r\n    \"country\": \"Egypt\"\r\n  },\r\n  \"paymentMethod\": \"cash\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get orders related to user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order by id (related)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/orders/68d422631640d42d55f1f281",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"68d422631640d42d55f1f281"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "creat order Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//should be admin to edit order status ==> pending , shipped , delivered , cancelled",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/orders/68d422631640d42d55f1f281/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"68d422631640d42d55f1f281",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete order by id (related) Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODcxNjAxMiwiZXhwIjoxNzU5MzIwODEyfQ.LO-wY9WtGYQjzs4Ur7Sxnb_cW4MQdLkwiW1yIuo2lro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/orders/68d422631640d42d55f1f281",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"68d422631640d42d55f1f281"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sellers",
+			"item": [
+				{
+					"name": "get seller profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjNGMyYjE1MThmY2U1ZjExYjE3NiIsImlhdCI6MTc1ODczNDU1MywiZXhwIjoxNzU5MzM5MzUzfQ.ODcMxW2OJ-KE_Oku4gZDukSLAPm9otU9wQD-bufosvU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shippingAddress\": {\r\n    \"street\": \"123 \",\r\n    \"city\": \"Alexandria\",\r\n    \"state\": \"Alex\",\r\n    \"zipCode\": \"12345\",\r\n    \"country\": \"Egypt\"\r\n  },\r\n  \"paymentMethod\": \"cash\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/sellers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"sellers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"shippingAddress\": {\r\n    \"street\": \"123 \",\r\n    \"city\": \"Alexandria\",\r\n    \"state\": \"Alex\",\r\n    \"zipCode\": \"12345\",\r\n    \"country\": \"Egypt\"\r\n  },\r\n  \"paymentMethod\": \"cash\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/sellers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"sellers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "515"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"203-eXn6QOWgSGFaIiKC/4160wXGSso\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 17:23:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"seller\": {\n            \"_id\": \"68d3c4c3b1518fce5f11b178\",\n            \"user\": {\n                \"_id\": \"68d3c4c2b1518fce5f11b176\",\n                \"name\": \"Seller Ahmed Ossama\",\n                \"email\": \"aossama2016@gmail.com\",\n                \"role\": \"seller\",\n                \"phone\": \"01577777666\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-09-24T10:15:30.971Z\",\n                \"updatedAt\": \"2025-09-24T10:15:30.971Z\",\n                \"__v\": 0\n            },\n            \"businessName\": \"Ahmed Oss\",\n            \"businessDescription\": \"We sell clothes.\",\n            \"isVerified\": true,\n            \"rating\": 0,\n            \"ratingCount\": 0,\n            \"createdAt\": \"2025-09-24T10:15:31.927Z\",\n            \"updatedAt\": \"2025-09-24T10:15:31.927Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "edit seller profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjNGMyYjE1MThmY2U1ZjExYjE3NiIsImlhdCI6MTc1ODczNDU1MywiZXhwIjoxNzU5MzM5MzUzfQ.ODcMxW2OJ-KE_Oku4gZDukSLAPm9otU9wQD-bufosvU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"businessName\": \"A Ossama Seller\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/sellers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"sellers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get list of products for seller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjNGMyYjE1MThmY2U1ZjExYjE3NiIsImlhdCI6MTc1ODczNDU1MywiZXhwIjoxNzU5MzM5MzUzfQ.ODcMxW2OJ-KE_Oku4gZDukSLAPm9otU9wQD-bufosvU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/sellers/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"sellers",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Create payment intent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODc0NDQxNiwiZXhwIjoxNzU5MzQ5MjE2fQ.5C_TuUnX5V_kvhHhjb0Q0DHJL6lfvi-cYYuX5zm3tNk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODY4NDg3MCwiZXhwIjoxNzU5Mjg5NjcwfQ.CPgFT-BrZPs4FXBORO7rtUjbdKcOD7VMaWkNYJuuzGg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shippingAddress\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\", \r\n        \"state\": \"NY\",\r\n        \"zipCode\": \"10001\",\r\n        \"country\": \"USA\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/payments/create-payment-intent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"create-payment-intent"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODY4NDg3MCwiZXhwIjoxNzU5Mjg5NjcwfQ.CPgFT-BrZPs4FXBORO7rtUjbdKcOD7VMaWkNYJuuzGg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\", \r\n        \"state\": \"NY\",\r\n        \"zipCode\": \"10001\",\r\n        \"country\": \"USA\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/payments/create-payment-intent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										"create-payment-intent"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1339"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53b-tL+xO4w6n8ZWuiiL9gqlwkKpk8s\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 20:07:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order created and payment intent generated\",\n    \"data\": {\n        \"order\": {\n            \"user\": \"68d366c59233525529303021\",\n            \"items\": [\n                {\n                    \"product\": {\n                        \"_id\": \"68d3728bb387095c8b898dca\",\n                        \"title\": \"Men's LinenT-Shirt\",\n                        \"price\": 299,\n                        \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\n                        \"finalPrice\": null,\n                        \"id\": \"68d3728bb387095c8b898dca\"\n                    },\n                    \"seller\": null,\n                    \"quantity\": 4,\n                    \"color\": \"Black\",\n                    \"size\": \"S\",\n                    \"price\": 239.2,\n                    \"totalPrice\": 956.8,\n                    \"_id\": \"68d44f7dc954763e7ebe5637\"\n                },\n                {\n                    \"product\": {\n                        \"_id\": \"68d3728bb387095c8b898dca\",\n                        \"title\": \"Men's LinenT-Shirt\",\n                        \"price\": 299,\n                        \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\n                        \"finalPrice\": null,\n                        \"id\": \"68d3728bb387095c8b898dca\"\n                    },\n                    \"seller\": null,\n                    \"quantity\": 8,\n                    \"color\": \"Black\",\n                    \"size\": \"M\",\n                    \"price\": 239.2,\n                    \"totalPrice\": 1913.6,\n                    \"_id\": \"68d44f7dc954763e7ebe5638\"\n                }\n            ],\n            \"totalAmount\": 2870.4,\n            \"paymentMethod\": \"online\",\n            \"paymentStatus\": \"pending\",\n            \"orderStatus\": \"pending\",\n            \"shippingAddress\": {\n                \"street\": \"123 Main St\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"zipCode\": \"10001\",\n                \"country\": \"USA\"\n            },\n            \"_id\": \"68d44f7dc954763e7ebe5636\",\n            \"createdAt\": \"2025-09-24T20:07:25.733Z\",\n            \"updatedAt\": \"2025-09-24T20:07:26.602Z\",\n            \"orderNumber\": \"ORD-e7bcb5e1-b6b6-4da3-a4fa-e33a37a8dec5\",\n            \"__v\": 0,\n            \"stripePaymentIntentId\": \"pi_3SAyyIAXfnD1Wsgs3d6bYZba\"\n        },\n        \"clientSecret\": \"pi_3SAyyIAXfnD1Wsgs3d6bYZba_secret_bVAzl3GioJYdaUpj5ayLfHjfW\",\n        \"paymentIntentId\": \"pi_3SAyyIAXfnD1Wsgs3d6bYZba\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ConfirmPayment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDM2NmM1OTIzMzUyNTUyOTMwMzAyMSIsImlhdCI6MTc1ODc0NDQxNiwiZXhwIjoxNzU5MzQ5MjE2fQ.5C_TuUnX5V_kvhHhjb0Q0DHJL6lfvi-cYYuX5zm3tNk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentIntentId\":\"pi_3SAyyIAXfnD1Wsgs3d6bYZba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/payments/confirm-payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"confirm-payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"paymentIntentId\":\"pi_3SAyyIAXfnD1Wsgs3d6bYZba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/payments/confirm-payment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										"confirm-payment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1234"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d2-vMCdql8KnqqZFe4KFx11enJ5et4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 20:22:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Payment confirmed successfully\",\n    \"data\": {\n        \"order\": {\n            \"shippingAddress\": {\n                \"street\": \"123 Main St\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"zipCode\": \"10001\",\n                \"country\": \"USA\"\n            },\n            \"_id\": \"68d44f7dc954763e7ebe5636\",\n            \"user\": \"68d366c59233525529303021\",\n            \"items\": [\n                {\n                    \"product\": {\n                        \"_id\": \"68d3728bb387095c8b898dca\",\n                        \"title\": \"Men's LinenT-Shirt\",\n                        \"price\": 299,\n                        \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\n                        \"finalPrice\": null,\n                        \"id\": \"68d3728bb387095c8b898dca\"\n                    },\n                    \"seller\": null,\n                    \"quantity\": 4,\n                    \"color\": \"Black\",\n                    \"size\": \"S\",\n                    \"price\": 239.2,\n                    \"totalPrice\": 956.8,\n                    \"_id\": \"68d44f7dc954763e7ebe5637\"\n                },\n                {\n                    \"product\": {\n                        \"_id\": \"68d3728bb387095c8b898dca\",\n                        \"title\": \"Men's LinenT-Shirt\",\n                        \"price\": 299,\n                        \"thumbnail\": \"https://example.com/images/tshirt-thumbnail.jpg\",\n                        \"finalPrice\": null,\n                        \"id\": \"68d3728bb387095c8b898dca\"\n                    },\n                    \"seller\": null,\n                    \"quantity\": 8,\n                    \"color\": \"Black\",\n                    \"size\": \"M\",\n                    \"price\": 239.2,\n                    \"totalPrice\": 1913.6,\n                    \"_id\": \"68d44f7dc954763e7ebe5638\"\n                }\n            ],\n            \"totalAmount\": 2870.4,\n            \"paymentMethod\": \"online\",\n            \"paymentStatus\": \"paid\",\n            \"orderStatus\": \"shipped\",\n            \"createdAt\": \"2025-09-24T20:07:25.733Z\",\n            \"updatedAt\": \"2025-09-24T20:22:04.345Z\",\n            \"orderNumber\": \"ORD-e7bcb5e1-b6b6-4da3-a4fa-e33a37a8dec5\",\n            \"__v\": 0,\n            \"stripePaymentIntentId\": \"pi_3SAyyIAXfnD1Wsgs3d6bYZba\",\n            \"paidAt\": \"2025-09-24T20:22:04.326Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "WebHook confirmation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "stripe-signature",
+								"value": "whsec_wRNftLajMZNeslQOP6vEPm4iVx5NlZ6z",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"payment_intent.succeeded\",\r\n    \"data\": {\r\n        \"object\": {\r\n            \"id\": \"pi_3SAyyIAXfnD1Wsgs3d6bYZba\",\r\n            \"status\": \"succeeded\",\r\n            \"amount\": 15050,\r\n            \"currency\": \"usd\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/payments/webhook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"webhook"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "stripe-signature",
+										"value": "whsec_wRNftLajMZNeslQOP6vEPm4iVx5NlZ6z",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"type\": \"payment_intent.succeeded\",\r\n    \"data\": {\r\n        \"object\": {\r\n            \"id\": \"pi_3SAyyIAXfnD1Wsgs3d6bYZba\",\r\n            \"status\": \"succeeded\",\r\n            \"amount\": 15050,\r\n            \"currency\": \"usd\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/payments/webhook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"payments",
+										"webhook"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11-AwthwvtwQvtPwO9Ch6SuPA2Y7Wg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Sep 2025 20:33:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"received\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "ecommerce",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
