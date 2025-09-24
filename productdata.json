@@ -1,0 +1,42 @@
+{
+	"title": "Men's Cotton T-Shirt",
+	"brand": "68d2b50b8bdf38ffabc37a36",
+	"description": "High-quality cotton T-shirt for men, perfect for everyday wear. Breathable fabric, slim fit, and durable stitching ensure comfort and style.",
+	"price": 299,
+	"discount": 0.2,
+	"status": "approved",
+	"stock": [
+		{
+			"color": "Black",
+			"images": [
+				"https://example.com/images/tshirt-black-front.jpg",
+				"https://example.com/images/tshirt-black-back.jpg"
+			],
+			"sizes": [
+				{ "name": "S", "qty": 10 },
+				{ "name": "M", "qty": 15 },
+				{ "name": "L", "qty": 8 }
+			]
+		},
+		{
+			"color": "White",
+			"images": [
+				"https://example.com/images/tshirt-white-front.jpg",
+				"https://example.com/images/tshirt-white-back.jpg"
+			],
+			"sizes": [
+				{ "name": "M", "qty": 12 },
+				{ "name": "L", "qty": 20 },
+				{ "name": "XL", "qty": 5 }
+			]
+		}
+	],
+	"material": "100% Cotton",
+	"thumbnail": "https://example.com/images/tshirt-thumbnail.jpg",
+	"offers": ["Buy 2 Get 1 Free", "Free Shipping"],
+	"sold": 35,
+	"ratingQty": 12,
+	"rating": 4.5,
+	"category": "68ce2417843ccec91975c372",
+	"subCategory": "68d23917915c83aa4e1022ab"
+}
